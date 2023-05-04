@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="module2App">
+    <head>
+        <title>Module 2 Coursera</title>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-controller="toBuyController">
+            <h3>Shopping list</h3>
+            <ul>
+                <li ng-repeat="items in shop">{{ items.name }} - {{items.quantity}} <button ng-click="addBought()">Buy</button></li>
+                
+            </ul>
+        </div>
+        <div ng-controller="boughtController">
+        <h3>Sold List</h3>
+            <ul>
+                <li ng-repeat="items in sold">{{ items.name }} - {{items.quantity}}</li>
+            </ul>
+        </div>
+    </body>
+</html>
