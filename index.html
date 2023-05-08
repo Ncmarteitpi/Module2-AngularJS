@@ -6,17 +6,17 @@
         <script src="app.js"></script>
     </head>
     <body>
-        <div ng-controller="toBuyController">
+        <div ng-controller="toBuyController as toBuy">
             <h3>Shopping list</h3>
             <ul>
-                <li ng-repeat="items in shop">{{ items.name }} - {{items.quantity}} <button ng-click="addBought()">Buy</button></li>
+                <li ng-repeat="items in toBuy.getTobuyList">{{ items.name }} - {{items.quantity}} <button ng-click="toBuy.addShoptoSold($index)">Buy</button></li>
                 
             </ul>
         </div>
-        <div ng-controller="boughtController">
+        <div ng-controller="boughtController as toSold">
         <h3>Sold List</h3>
             <ul>
-                <li ng-repeat="items in sold">{{ items.name }} - {{items.quantity}}</li>
+                <li ng-repeat="items in toSold.getSoldList">{{ items.name }} - {{items.quantity}}</li>
             </ul>
         </div>
     </body>
